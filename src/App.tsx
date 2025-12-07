@@ -35,7 +35,13 @@ const App = () => {
     "&:hover": {
       background: "rgba(30, 30, 30, 0.8)",
       boxShadow: "0 12px 40px rgba(0, 0, 0, 0.35)",
-    }
+    },
+
+    "@media (max-width: 600px)": {
+      gap: "8px",
+      padding: "8px 16px",
+      top: "10px",
+    },
   });
 
   const StyledMediaBar = styled("nav")({
@@ -78,6 +84,8 @@ const App = () => {
             color: "white",
             border: "1px solid rgba(255,255,255,0.2)",
             fontWeight: 600,
+            fontSize: { xs: "0.75rem", md: "0.875rem" },
+            height: { xs: "28px", md: "32px" },
             transition: "all .25s ease",
             "&:hover": {
               backgroundColor: "rgba(255,255,255,0.15)",
@@ -92,6 +100,8 @@ const App = () => {
             color: "white",
             border: "1px solid rgba(255,255,255,0.2)",
             fontWeight: 600,
+            fontSize: { xs: "0.75rem", md: "0.875rem" },
+            height: { xs: "28px", md: "32px" },
             transition: "all .25s ease",
             "&:hover": {
               backgroundColor: "rgba(255,255,255,0.15)",
@@ -107,6 +117,8 @@ const App = () => {
             color: "white",
             border: "1px solid rgba(255,255,255,0.2)",
             fontWeight: 600,
+            fontSize: { xs: "0.75rem", md: "0.875rem" },
+            height: { xs: "28px", md: "32px" },
             transition: "all .25s ease",
             "&:hover": {
               backgroundColor: "rgba(255,255,255,0.15)",
@@ -122,6 +134,8 @@ const App = () => {
             color: "white",
             border: "1px solid rgba(255,255,255,0.2)",
             fontWeight: 600,
+            fontSize: { xs: "0.75rem", md: "0.875rem" },
+            height: { xs: "28px", md: "32px" },
             transition: "all .25s ease",
             "&:hover": {
               backgroundColor: "rgba(255,255,255,0.15)",
