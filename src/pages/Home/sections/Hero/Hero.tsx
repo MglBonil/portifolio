@@ -11,7 +11,7 @@ const StyledHero = styled("div")({
 	alignItems: "center",
 	justifyContent: "center",
 	padding: "80px 0 40px 0",
-	
+
 	"@media (max-width: 600px)": {
 		height: "auto",
 		minHeight: "100vh",
@@ -21,16 +21,16 @@ const StyledHero = styled("div")({
 
 const StyledButton = styled(Button)({
 	background: "rgba(30, 30, 30, 0.6)",
-	
+
 	backdropFilter: "blur(10px)",
 	boxShadow: "0 8px 30px rgba(0, 0, 0, 0.25)",
 	border: "1px solid rgba(255,255,255,0.1)",
 	top: "30px",
 
 	"&:hover": {
-      background: "rgba(30, 30, 30, 0.8)",
-      boxShadow: "0 12px 40px rgba(0, 0, 0, 0.35)",
-    }
+		background: "rgba(30, 30, 30, 0.8)",
+		boxShadow: "0 12px 40px rgba(0, 0, 0, 0.35)",
+	}
 });
 
 const StyledImg = styled("img")({
@@ -50,12 +50,12 @@ const GradientText = styled(Typography)({
 
 const Hero = () => {
 	return (
-		
+
 		<StyledHero>
-			
+
 			<Container maxWidth="lg">
 				<Grid container spacing={2}>
-					<Grid 
+					<Grid
 						size={{ xs: 12, md: 8 }}
 						sx={{
 							order: { xs: 2, md: 1 }
@@ -76,24 +76,30 @@ const Hero = () => {
 						<GradientText variant="h2" textAlign="center" height="auto" width="auto">
 							Developer
 						</GradientText>
-						
+
 						<Grid container spacing={2} justifyContent="center">
-							
+
 							<Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
 								<StyledButton>
 									<DownloadIcon /> Download CV
 								</StyledButton>
-								<br/><br/>
+								<br /><br />
 							</Grid>
 
 							<Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-								<StyledButton>
-									<EmailIcon /> Contact Me
-								</StyledButton>
+								<a href="mailto:miguelbcassiano@gmail.com">
+									<StyledButton>
+
+
+										<EmailIcon />ㅤ ㅤContact Me
+
+
+									</StyledButton>
+								</a>
 							</Grid>
 						</Grid>
 					</Grid>
-					<Grid 
+					<Grid
 						size={{ xs: 12, md: 4 }}
 						sx={{
 							order: { xs: 1, md: 2 }

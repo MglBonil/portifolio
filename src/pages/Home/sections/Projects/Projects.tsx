@@ -42,7 +42,7 @@ const Projects = () => {
               textAlign="center"
               color="primary"
               variant="h4"
-              fontSize={{ xs: "1.5rem", md: "2.125rem" }}
+              fontSize={{ xs: "3rem", md: "4.25rem" }}
               fontWeight={600}
               gutterBottom
             >

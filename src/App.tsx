@@ -1,5 +1,6 @@
 
 import styled from "@emotion/styled";
+import { useState, useEffect, useRef } from "react";
 
 import Hero from "./pages/Home/sections/Hero/Hero";
 import { Chip } from "@mui/material";
@@ -15,6 +16,63 @@ import Projects from "./pages/Home/sections/Projects/Projects";
 
 
 const App = () => {
+  const [activeSection, setActiveSection] = useState("inicio");
+  const heroRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 150;
+
+      const sections = [
+        { id: "inicio", ref: heroRef },
+        { id: "projetos", ref: projectsRef },
+        { id: "sobre", ref: aboutRef },
+        { id: "contato", ref: contactRef },
+      ];
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section.ref.current) {
+          const rect = section.ref.current.getBoundingClientRect();
+          const offsetTop = rect.top + window.scrollY;
+          const offsetBottom = offsetTop + rect.height;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Check initial position
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const sectionMap: { [key: string]: React.RefObject<HTMLDivElement | null> } = {
+      inicio: heroRef,
+      projetos: projectsRef,
+      sobre: aboutRef,
+      contato: contactRef,
+    };
+
+    const section = sectionMap[sectionId];
+    if (section?.current) {
+      const yOffset = -80; // Offset para a barra de navegação
+      const y = section.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+    }
+  };
 
   const StyledHeroNav = styled("nav")({
     position: "fixed",
@@ -79,13 +137,15 @@ const App = () => {
       <StyledHeroNav>
         <Chip
           label="Inicio"
+          onClick={() => scrollToSection("inicio")}
           sx={{
-            backgroundColor: "transparent",
+            backgroundColor: activeSection === "inicio" ? "rgba(255,255,255,0.15)" : "transparent",
             color: "white",
             border: "1px solid rgba(255,255,255,0.2)",
             fontWeight: 600,
             fontSize: { xs: "0.75rem", md: "0.875rem" },
             height: { xs: "28px", md: "32px" },
+            cursor: "pointer",
             transition: "all .25s ease",
             "&:hover": {
               backgroundColor: "rgba(255,255,255,0.15)",
@@ -95,13 +155,15 @@ const App = () => {
         />
         <Chip
           label="Sobre"
+          onClick={() => scrollToSection("sobre")}
           sx={{
-            backgroundColor: "transparent",
+            backgroundColor: activeSection === "sobre" ? "rgba(255,255,255,0.15)" : "transparent",
             color: "white",
             border: "1px solid rgba(255,255,255,0.2)",
             fontWeight: 600,
             fontSize: { xs: "0.75rem", md: "0.875rem" },
             height: { xs: "28px", md: "32px" },
+            cursor: "pointer",
             transition: "all .25s ease",
             "&:hover": {
               backgroundColor: "rgba(255,255,255,0.15)",
@@ -112,13 +174,15 @@ const App = () => {
 
         <Chip
           label="Projetos"
+          onClick={() => scrollToSection("projetos")}
           sx={{
-            backgroundColor: "transparent",
+            backgroundColor: activeSection === "projetos" ? "rgba(255,255,255,0.15)" : "transparent",
             color: "white",
             border: "1px solid rgba(255,255,255,0.2)",
             fontWeight: 600,
             fontSize: { xs: "0.75rem", md: "0.875rem" },
             height: { xs: "28px", md: "32px" },
+            cursor: "pointer",
             transition: "all .25s ease",
             "&:hover": {
               backgroundColor: "rgba(255,255,255,0.15)",
@@ -129,13 +193,15 @@ const App = () => {
 
         <Chip
           label="Contato"
+          onClick={() => scrollToSection("contato")}
           sx={{
-            backgroundColor: "transparent",
+            backgroundColor: activeSection === "contato" ? "rgba(255,255,255,0.15)" : "transparent",
             color: "white",
             border: "1px solid rgba(255,255,255,0.2)",
             fontWeight: 600,
             fontSize: { xs: "0.75rem", md: "0.875rem" },
             height: { xs: "28px", md: "32px" },
+            cursor: "pointer",
             transition: "all .25s ease",
             "&:hover": {
               backgroundColor: "rgba(255,255,255,0.15)",
@@ -189,10 +255,18 @@ const App = () => {
         </a>
 
       </StyledMediaBar>
-      <Hero />
-      <Projects/>
-      <About/>
-      <Contact/>
+      <div ref={heroRef}>
+        <Hero />
+      </div>
+      <div ref={projectsRef}>
+        <Projects/>
+      </div>
+      <div ref={aboutRef}>
+        <About/>
+      </div>
+      <div ref={contactRef}>
+        <Contact/>
+      </div>
 
     </>
   )
