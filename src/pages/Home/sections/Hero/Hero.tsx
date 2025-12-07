@@ -55,7 +55,12 @@ const Hero = () => {
 			
 			<Container maxWidth="lg">
 				<Grid container spacing={2}>
-					<Grid size={{ xs: 12, md: 8 }}>
+					<Grid 
+						size={{ xs: 12, md: 8 }}
+						sx={{
+							order: { xs: 2, md: 1 }
+						}}
+					>
 						<Typography
 							color="primary"
 							variant="h1"
@@ -88,7 +93,12 @@ const Hero = () => {
 							</Grid>
 						</Grid>
 					</Grid>
-					<Grid size={{ xs: 12, md: 4 }}>
+					<Grid 
+						size={{ xs: 12, md: 4 }}
+						sx={{
+							order: { xs: 1, md: 2 }
+						}}
+					>
 						<StyledImg src={Avatar} alt="avatar" />
 					</Grid>
 
