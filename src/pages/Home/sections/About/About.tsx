@@ -27,21 +27,6 @@ const StyledTabs = styled(Tabs)({
     },
 });
 
-const StyledTab = styled(Tab)({
-    color: "rgba(255,255,255,0.7)",
-    fontWeight: 600,
-    fontSize: "1rem",
-    textTransform: "none",
-    
-    "&.Mui-selected": {
-        color: "white",
-    },
-    
-    "@media (max-width: 600px)": {
-        fontSize: "0.875rem",
-        padding: "12px 8px",
-    },
-});
 
 const StyledTabPanel = styled(Box)({
     padding: "30px 0",
@@ -82,6 +67,39 @@ const StyledIconContainer = styled(Box)({
         padding: "15px",
     },
 });
+
+const StyledIcon = styled("img")({
+    width: "50px",
+    height: "50px",
+    objectFit: "contain",
+    
+    "@media (max-width: 600px)": {
+        width: "40px",
+        height: "40px",
+    },
+});
+
+interface TechIconProps {
+    name: string;
+    iconUrl: string;
+}
+
+const TechIcon = ({ name, iconUrl }: TechIconProps) => {
+    return (
+        <StyledIconContainer>
+            <StyledIcon src={iconUrl} alt={name} />
+            <Typography 
+                color="primary" 
+                fontSize={{ xs: "0.75rem", md: "0.875rem" }} 
+                textAlign="center"
+                marginTop="8px"
+                fontWeight={500}
+            >
+                {name}
+            </Typography>
+        </StyledIconContainer>
+    );
+};
 
 
 
@@ -173,42 +191,103 @@ export default function AlternateTimeline() {
 
                         <Box sx={{ width: "100%", marginTop: "40px" }}>
                             <StyledTabs
+                                id="tech-tabs"
                                 value={value}
                                 onChange={handleChange}
                                 variant="scrollable"
                                 scrollButtons="auto"
                                 aria-label="tecnologias tabs"
                             >
-                                <StyledTab label="Back-end" />
-                                <StyledTab label="Front-End" />
-                                <StyledTab label="Ferramentas" />
+                                <Tab 
+                                    id="tech-tab-0" 
+                                    aria-controls="tech-tabpanel-0" 
+                                    label="Back-end"
+                                    sx={{
+                                        color: "rgba(255,255,255,0.7)",
+                                        fontWeight: 600,
+                                        fontSize: "1rem",
+                                        textTransform: "none",
+                                        "&.Mui-selected": {
+                                            color: "white",
+                                        },
+                                        "@media (max-width: 600px)": {
+                                            fontSize: "0.875rem",
+                                            padding: "12px 8px",
+                                        },
+                                    }}
+                                />
+                                <Tab 
+                                    id="tech-tab-1" 
+                                    aria-controls="tech-tabpanel-1" 
+                                    label="Front-End"
+                                    sx={{
+                                        color: "rgba(255,255,255,0.7)",
+                                        fontWeight: 600,
+                                        fontSize: "1rem",
+                                        textTransform: "none",
+                                        "&.Mui-selected": {
+                                            color: "white",
+                                        },
+                                        "@media (max-width: 600px)": {
+                                            fontSize: "0.875rem",
+                                            padding: "12px 8px",
+                                        },
+                                    }}
+                                />
+                                <Tab 
+                                    id="tech-tab-2" 
+                                    aria-controls="tech-tabpanel-2" 
+                                    label="Ferramentas"
+                                    sx={{
+                                        color: "rgba(255,255,255,0.7)",
+                                        fontWeight: 600,
+                                        fontSize: "1rem",
+                                        textTransform: "none",
+                                        "&.Mui-selected": {
+                                            color: "white",
+                                        },
+                                        "@media (max-width: 600px)": {
+                                            fontSize: "0.875rem",
+                                            padding: "12px 8px",
+                                        },
+                                    }}
+                                />
                             </StyledTabs>
 
                             <TabPanel value={value} index={0}>
-                                {/* Adicione aqui os ícones das linguagens Back-end */}
-                                <StyledIconContainer>
-                                    <Typography color="primary" fontSize="0.875rem" textAlign="center">
-                                        Adicione ícones aqui
-                                    </Typography>
-                                </StyledIconContainer>
+                                {/* Back-end Technologies */}
+                                <TechIcon name="C" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" />
+                                <TechIcon name="C++" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" />
+                                <TechIcon name="Java" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />
+                                <TechIcon name="Spring" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" />
+                                <TechIcon name="C#" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
+                                <TechIcon name="Python" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />
+                                <TechIcon name="Django" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" />
+                                <TechIcon name=".NET" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" />
+                                <TechIcon name="Node.js" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" />
+                                <TechIcon name="PHP" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" />
                             </TabPanel>
 
                             <TabPanel value={value} index={1}>
-                                {/* Adicione aqui os ícones das linguagens Front-End */}
-                                <StyledIconContainer>
-                                    <Typography color="primary" fontSize="0.875rem" textAlign="center">
-                                        Adicione ícones aqui
-                                    </Typography>
-                                </StyledIconContainer>
+                                {/* Front-End Technologies */}
+                                <TechIcon name="HTML" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" />
+                                <TechIcon name="React" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
+                                <TechIcon name="Vite" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg" />
+                                <TechIcon name="CSS" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" />
+                                <TechIcon name="JavaScript" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
                             </TabPanel>
 
                             <TabPanel value={value} index={2}>
-                                {/* Adicione aqui os ícones das ferramentas */}
-                                <StyledIconContainer>
-                                    <Typography color="primary" fontSize="0.875rem" textAlign="center">
-                                        Adicione ícones aqui
-                                    </Typography>
-                                </StyledIconContainer>
+                                {/* Tools */}
+                                <TechIcon name="IntelliJ" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/intellij/intellij-original.svg" />
+                                <TechIcon name="VS Code" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
+                                <TechIcon name="Git" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
+                                <TechIcon name="GitHub" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" />
+                                <TechIcon name="Apache" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" />
+                                <TechIcon name="NetBeans" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netbeans/netbeans-original.svg" />
+                                <TechIcon name="MySQL" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
+                                <TechIcon name="PostgreSQL" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
+                                <TechIcon name="XAMPP" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xampp/xampp-original.svg" />
                             </TabPanel>
                         </Box>
 
