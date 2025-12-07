@@ -8,7 +8,13 @@ const StyledHero = styled("div")({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    padding: "40px 0",
 
+    "@media (max-width: 600px)": {
+        height: "auto",
+        minHeight: "100vh",
+        padding: "60px 20px",
+    },
 });
 
 
@@ -40,6 +46,7 @@ export default function AlternateTimeline() {
                             textAlign={"center"}
                             color="primary"
                             variant="h4"
+                            fontSize={{ xs: "1.5rem", md: "2.125rem" }}
                             fontWeight="600"><br />Me Conheça Melhor</Typography>
                         <Typography
                             justifyContent="center"
@@ -51,11 +58,13 @@ export default function AlternateTimeline() {
                             textAlign={"center"}
                             color="primary"
                             variant="h4"
+                            fontSize={{ xs: "1.5rem", md: "2.125rem" }}
                             fontWeight="600"><br />Minha história</Typography>
                         <Typography
                             justifyContent="center"
-                            textAlign="left"
+                            textAlign={{ xs: "center", md: "left" }}
                             color="primary"
+                            fontSize={{ xs: "0.9rem", md: "1rem" }}
                         >
                             Atuo com desenvolvimento de aplicativos desktop, com foco em projetos que visam criar soluções que facilitem a usabilidade e contribuam para a comunidade de desenvolvimento.
                             <br /><br />

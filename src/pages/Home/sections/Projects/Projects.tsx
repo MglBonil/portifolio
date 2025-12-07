@@ -8,6 +8,13 @@ const StyledHero = styled("div")({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
+  padding: "40px 0",
+
+  "@media (max-width: 600px)": {
+    height: "auto",
+    minHeight: "100vh",
+    padding: "60px 20px",
+  },
 });
 
 const StyledProjectImg = styled("img")({
@@ -35,6 +42,7 @@ const Projects = () => {
               textAlign="center"
               color="primary"
               variant="h4"
+              fontSize={{ xs: "1.5rem", md: "2.125rem" }}
               fontWeight={600}
               gutterBottom
             >

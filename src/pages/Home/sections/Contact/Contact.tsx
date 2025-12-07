@@ -10,6 +10,10 @@ const StyledContact = styled("div")({
     alignItems: "center",
     justifyContent: "center",
     padding: "50px 0",
+
+    "@media (max-width: 600px)": {
+        padding: "60px 20px",
+    },
 });
 
 const StyledButton = styled(Button)({
@@ -82,7 +86,14 @@ const Contact = () => {
     return (
         <StyledContact>
             <Container maxWidth="sm">
-                <Typography variant="h3" textAlign="center" fontWeight="600" color="primary" gutterBottom>
+                <Typography 
+                    variant="h3" 
+                    textAlign="center" 
+                    fontWeight="600" 
+                    color="primary" 
+                    fontSize={{ xs: "1.75rem", md: "3rem" }}
+                    gutterBottom
+                >
                     Entre em Contato
                 </Typography>
                 <br/>

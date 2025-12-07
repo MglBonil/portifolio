@@ -10,6 +10,13 @@ const StyledHero = styled("div")({
 	display: "flex",
 	alignItems: "center",
 	justifyContent: "center",
+	padding: "80px 0 40px 0",
+	
+	"@media (max-width: 600px)": {
+		height: "auto",
+		minHeight: "100vh",
+		padding: "100px 20px 60px 20px",
+	},
 });
 
 const StyledButton = styled(Button)({
@@ -53,7 +60,7 @@ const Hero = () => {
 							color="primary"
 							variant="h1"
 							textAlign="center"
-							fontSize="4.5rem"
+							fontSize={{ xs: "2.5rem", md: "4.5rem" }}
 							fontWeight="900"
 							height="auto"
 							width="auto"
