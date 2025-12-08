@@ -76,12 +76,12 @@ const App = () => {
 
   const StyledHeroNav = styled("nav")({
     position: "fixed",
-    top: "20px",
+    top: "3%",
     left: "50%",
     transform: "translateX(-50%)",
     display: "flex",
     gap: "16px",
-    padding: "10px 13px",
+    padding: "15px 15px",
     background: "rgba(30, 30, 30, 0.6)",
     borderRadius: "9999px",
     backdropFilter: "blur(10px)",
@@ -95,10 +95,14 @@ const App = () => {
       boxShadow: "0 12px 40px rgba(0, 0, 0, 0.35)",
     },
 
+    "@media (min-width: 900px)": {
+      transform: "translateX(-50%) scale(1.1)", // ← AUMENTA TUDO
+    },
+
     "@media (max-width: 600px)": {
       gap: "8px",
       padding: "8px 13px",
-      top: "10px",
+      top: "15px",
     },
   });
 

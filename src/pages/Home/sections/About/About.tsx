@@ -181,7 +181,7 @@ export default function AlternateTimeline() {
                         >
                             Atuo com desenvolvimento de aplicativos desktop, com foco em projetos que visam criar soluções que facilitem a usabilidade e contribuam para a comunidade de desenvolvimento.
                             <br /><br />
-                            Meu primeiro contato com a programação foi em 2018, quando iniciei um curso na rede "SuperGeeks", onde desenvolvi os pilares do pensamento lógico. Desde então, nunca deixei de estudar, construindo uma base sólida em matemática e realizando diversos cursos complementares. Entre eles, destacam-se: cursos de Python (90 horas) no SENAI em 2023, cursos de Spring Boot na plataforma Udemy em 2025 e, atualmente, o curso de Desenvolvimento de Sistemas na ETEC, iniciado em 2025.
+                            Meu primeiro contato com a programação foi em 2018, quando iniciei um curso na rede "SuperGeeks", onde desenvolvi os pilares do pensamento lógico. Desde então, nunca deixei de estudar, construindo uma base sólida em matemática e realizando diversos cursos complementares. Entre eles, destacam-se: cursos de Python (90 horas) no SENAI em 2023, cursos de Spring Boot na plataforma Udemy em 2025 e, atualmente, o curso de Desenvolvimento de Sistemas na ETEC, iniciado em 2024.
                             <br /><br />
                             Sou autodidata e aprendi diversas tecnologias e conceitos também por meio de fóruns, documentação e materiais online. Além disso, realizo leituras de livros como "Introdução ao Python" e "Orientação a Objetos com Java".
                             <br /><br />
