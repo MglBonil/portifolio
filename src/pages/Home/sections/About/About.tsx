@@ -165,7 +165,7 @@ export default function AlternateTimeline() {
                             justifyContent="center"
                             textAlign={"center"}
                             color="primary"
-                        >Sou desenvolvedor backend junior, em constante jornada de aprendizado de novas tecnologias e formas de se resolver problemas. Busco soluções praticas e eficientes para resolver problemas de forma otimizada e criativa.</Typography>
+                        >Sou desenvolvedor backend Full Stack, em constante jornada de aprendizado de novas tecnologias e formas de se resolver problemas. Busco soluções praticas e eficientes para resolver problemas de forma otimizada e criativa.</Typography>
                         <Typography
                             justifyContent="center"
                             textAlign={"center"}
@@ -288,7 +288,7 @@ export default function AlternateTimeline() {
                                 <TechIcon name="NetBeans" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netbeans/netbeans-original.svg" />
                                 <TechIcon name="MySQL" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" />
                                 <TechIcon name="PostgreSQL" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />
-                                <TechIcon name="XAMPP" iconUrl="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xampp/xampp-original.svg" />
+                                
                             </TabPanel>
                         </Box>
 

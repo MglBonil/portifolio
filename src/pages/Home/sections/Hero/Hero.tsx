@@ -65,7 +65,7 @@ const Hero = () => {
 							color="primary"
 							variant="h1"
 							textAlign="center"
-							fontSize={{ xs: "2.5rem", md: "4.5rem" }}
+							fontSize={{ xs: "2.5rem", md: "5rem" }}
 							fontWeight="900"
 							height="auto"
 							width="auto"
@@ -73,13 +73,13 @@ const Hero = () => {
 							Miguel Bonilha
 						</Typography>
 
-						<GradientText variant="h2" textAlign="center" height="auto" width="auto">
-							Developer
+						<GradientText variant="h2" textAlign="center" height="auto" width="auto" fontSize={{ xs: "2.5rem", md: "4.5rem" }}>
+							Desenvolvedor <br/> Full-Stack<br />
 						</GradientText>
 
 						<Grid container spacing={2} justifyContent="center">
-
-							<Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
+							
+							<Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center" >
 								<StyledButton>
 									<DownloadIcon /> Download CV
 								</StyledButton>
