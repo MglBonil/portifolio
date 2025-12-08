@@ -39,7 +39,7 @@ const App = () => {
           const rect = section.ref.current.getBoundingClientRect();
           const offsetTop = rect.top + window.scrollY;
           const offsetBottom = offsetTop + rect.height;
-          
+
           if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
             setActiveSection(section.id);
             break;
@@ -66,7 +66,7 @@ const App = () => {
     if (section?.current) {
       const yOffset = -80; // Offset para a barra de navegação
       const y = section.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      
+
       window.scrollTo({
         top: y,
         behavior: "smooth",
@@ -81,7 +81,7 @@ const App = () => {
     transform: "translateX(-50%)",
     display: "flex",
     gap: "16px",
-    padding: "10px 24px",
+    padding: "10px 13px",
     background: "rgba(30, 30, 30, 0.6)",
     borderRadius: "9999px",
     backdropFilter: "blur(10px)",
@@ -97,7 +97,7 @@ const App = () => {
 
     "@media (max-width: 600px)": {
       gap: "8px",
-      padding: "8px 16px",
+      padding: "8px 13px",
       top: "10px",
     },
   });
@@ -154,6 +154,24 @@ const App = () => {
           }}
         />
         <Chip
+          label="Projetos"
+          onClick={() => scrollToSection("projetos")}
+          sx={{
+            backgroundColor: activeSection === "projetos" ? "rgba(255,255,255,0.15)" : "transparent",
+            color: "white",
+            border: "1px solid rgba(255,255,255,0.2)",
+            fontWeight: 600,
+            fontSize: { xs: "0.75rem", md: "0.875rem" },
+            height: { xs: "28px", md: "32px" },
+            cursor: "pointer",
+            transition: "all .25s ease",
+            "&:hover": {
+              backgroundColor: "rgba(255,255,255,0.15)",
+              transform: "translateY(-2px)",
+            },
+          }}
+        />
+        <Chip
           label="Sobre"
           onClick={() => scrollToSection("sobre")}
           sx={{
@@ -172,24 +190,7 @@ const App = () => {
           }}
         />
 
-        <Chip
-          label="Projetos"
-          onClick={() => scrollToSection("projetos")}
-          sx={{
-            backgroundColor: activeSection === "projetos" ? "rgba(255,255,255,0.15)" : "transparent",
-            color: "white",
-            border: "1px solid rgba(255,255,255,0.2)",
-            fontWeight: 600,
-            fontSize: { xs: "0.75rem", md: "0.875rem" },
-            height: { xs: "28px", md: "32px" },
-            cursor: "pointer",
-            transition: "all .25s ease",
-            "&:hover": {
-              backgroundColor: "rgba(255,255,255,0.15)",
-              transform: "translateY(-2px)",
-            },
-          }}
-        />
+
 
         <Chip
           label="Contato"
@@ -259,13 +260,13 @@ const App = () => {
         <Hero />
       </div>
       <div ref={projectsRef}>
-        <Projects/>
+        <Projects />
       </div>
       <div ref={aboutRef}>
-        <About/>
+        <About />
       </div>
       <div ref={contactRef}>
-        <Contact/>
+        <Contact />
       </div>
 
     </>
