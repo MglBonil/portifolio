@@ -49,7 +49,7 @@ const App = () => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Check initial position
+    handleScroll(); 
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -64,7 +64,7 @@ const App = () => {
 
     const section = sectionMap[sectionId];
     if (section?.current) {
-      const yOffset = -80; // Offset para a barra de navegação
+      const yOffset = -80; 
       const y = section.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
       window.scrollTo({
@@ -96,7 +96,7 @@ const App = () => {
     },
 
     "@media (min-width: 900px)": {
-      transform: "translateX(-50%) scale(1.1)", // ← AUMENTA TUDO
+      transform: "translateX(-50%) scale(1.1)", 
     },
 
     "@media (max-width: 600px)": {
@@ -118,7 +118,7 @@ const App = () => {
     zIndex: 9999,
     transition: "all 0.3s ease-in-out",
 
-    // MOBILE (máx 600px)
+  
     "@media (max-width: 1150px)": {
       flexDirection: "row",
       top: "auto",

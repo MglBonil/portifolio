@@ -21,7 +21,10 @@ const StyledHero = styled("div")({
 
 const StyledButton = styled(Button)({
 	background: "rgba(30, 30, 30, 0.6)",
-
+	borderRadius: "9999px",
+	padding: "10px 24px",
+	fontWeight: 600,
+	color: "white",
 	backdropFilter: "blur(10px)",
 	boxShadow: "0 8px 30px rgba(0, 0, 0, 0.25)",
 	border: "1px solid rgba(255,255,255,0.1)",
@@ -43,6 +46,7 @@ const StyledImg = styled("img")({
 
 const GradientText = styled(Typography)({
 	fontWeight: 600,
+
 	background: "linear-gradient(90deg, rgb(0,124,240), rgb(0,223,216))",
 	WebkitBackgroundClip: "text",
 	WebkitTextFillColor: "transparent",
@@ -81,7 +85,7 @@ const Hero = () => {
 							
 							<Grid size={{ xs: 12, md: 4 }} display="flex" justifyContent="center" >
 								<StyledButton>
-									<DownloadIcon /> Download CV
+									<DownloadIcon />ㅤDownload CV
 								</StyledButton>
 								<br /><br />
 							</Grid>
@@ -91,7 +95,7 @@ const Hero = () => {
 									<StyledButton>
 
 
-										<EmailIcon />ㅤ ㅤContact Me
+										<EmailIcon />ㅤContato
 
 
 									</StyledButton>
