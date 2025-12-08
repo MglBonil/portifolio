@@ -60,7 +60,7 @@ const Contact = () => {
         formData.append("name", name);
         formData.append("email", email);
         formData.append("message", message);
-        formData.append("access_key", String(apiKey)); // Substitua pela sua chave
+        formData.append("access_key", apiKey); // Substitua pela sua chave
 
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
